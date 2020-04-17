@@ -4,11 +4,12 @@ class TreeNode:
     self.left = None
     self.right = None
    
-def mid_travel(root):
+lists = []
+def pre_travel(root,lists):
   if not root:
     return
-  mid_travel(root.left)
-  root.val
-  mid_travel(root.right)
+  lists.append(root.val)
+  pre_travel(root.left,lists)
+  pre_travel(root.right,lists)
   return 
     
