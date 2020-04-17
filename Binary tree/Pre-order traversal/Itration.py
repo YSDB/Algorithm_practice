@@ -11,7 +11,11 @@ stack = [(root,new)]
 while stack:
   root, stat = stack.pop()
   if stat == old:
-    
+    lists.append(root.val)
+    continue
+  if root.right:
+    stack.append((root.right,new))
+  stack.append((root,old))
   if root.left:
     stack.append((root.left,new))
-  stack.append()
+  
