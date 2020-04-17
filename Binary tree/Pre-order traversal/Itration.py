@@ -4,18 +4,14 @@ class TreeNode:
     self.left = None
     self.right = None
 
-new = 0
-old = 1
+
 lists = []
-stack = [(root,new)]
+stack = [root]
 while stack:
-  root, stat = stack.pop()
-  if stat == old:
-    lists.append(root.val)
-    continue
+  root = stack.pop()
+  lists.append(root.val)
   if root.right:
-    stack.append((root.right,new))
-  stack.append((root,old))
+    stack.append(root.right)
   if root.left:
-    stack.append((root.left,new))
+    stack.append(root.left)
   
